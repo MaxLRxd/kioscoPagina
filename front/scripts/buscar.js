@@ -38,23 +38,44 @@ function obtenerProducto(producto){
 }
 
 function mostrarProducto(datos){
-    const {nombre, cantidad, precio} = datos;
-    
-    const nombreProducto = document.createElement("p");
-    nombreProducto.innerHTML = `${nombre}`;
-    nombreProducto.classList.add("nombre-resultado");
+  const { nombre, cantidad, precio } = datos;
 
-    const cantidadProducto = document.createElement("p");
-    cantidadProducto.innerHTML = `Stock: ${cantidad}`;
-    cantidadProducto.classList.add("cantidad-resultado");
+  const nombreProducto = document.createElement("p");
+  nombreProducto.innerHTML = `${nombre}`;
+  nombreProducto.classList.add("nombre-resultado");
 
-    const precioProducto = document.createElement("p");
-    precioProducto.innerHTML = `${precio}`;
-    precioProducto.classList.add("precio-resultado");
+  const cantidadProducto = document.createElement("p");
+  cantidadProducto.innerHTML = `Stock: ${cantidad}`;
+  cantidadProducto.classList.add("cantidad-resultado");
 
-    resultado.appendChild(nombreProducto);
-    resultado.appendChild(cantidadProducto);
-    resultado.appendChild(precioProducto);
+  const precioProducto = document.createElement("p");
+  precioProducto.innerHTML = `${precio}`;
+  precioProducto.classList.add("precio-resultado");
+
+  // Botones
+  const botonActualizar = document.createElement("button");
+  const botonEliminar = document.createElement("button");
+
+  botonActualizar.innerHTML = "Modificar producto";
+  botonEliminar.innerHTML = "Eliminar producto";
+
+  botonActualizar.classList.add("boton", "modificar");
+  botonEliminar.classList.add("boton", "eliminar");
+
+  // Redirecciones
+  botonActualizar.addEventListener("click", () => {
+    window.location.href = "modificar.html";
+  });
+
+  botonEliminar.addEventListener("click", () => {
+    window.location.href = "eliminar.html";
+  });
+
+  resultado.appendChild(nombreProducto);
+  resultado.appendChild(cantidadProducto);
+  resultado.appendChild(precioProducto);
+  resultado.appendChild(botonActualizar);
+  resultado.appendChild(botonEliminar);
 }
 
 

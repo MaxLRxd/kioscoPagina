@@ -1,5 +1,7 @@
 package com.kiosco.app.Controllers;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kiosco.app.Models.Producto;
 import com.kiosco.app.Models.ProductoRequest;
 import com.kiosco.app.Models.ProductoResponse;
 import com.kiosco.app.Services.ProductoService;
@@ -32,6 +35,11 @@ public class ProductoController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+    }
+
+    @GetMapping("/todos")
+    public List<Producto> obtenerTodos() {
+        return service.obtenerTodos();
     }
 
     @PostMapping("/agregar")

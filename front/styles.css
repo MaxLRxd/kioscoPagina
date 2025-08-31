@@ -71,17 +71,75 @@ body {
     color: var(--morado-claro);
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR DE LAS CARTAS */
 .container {
-    max-width: 600px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    background: var(--blanco);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     flex: 1;
-    /* empuja el footer hacia abajo */
 }
+
+/* CARTAS GENÉRICAS */
+.container .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover */
+.container .link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay oscuro para que el texto siempre se lea */
+.container .link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.container .link {
+    position: relative;
+    z-index: 1;
+}
+
+/* FONDOS PERSONALIZADOS */
+.buscar .link {
+    background-image: url("assets/buscar.jpg");
+}
+
+.agregar .link {
+    background-image: url("assets/agregar.jpg");
+}
+
+.modificar .link {
+    background-image: url("assets/modificar.jpg");
+}
+
+.eliminar .link {
+    background-image: url("assets/eliminar.jpg");
+}
+
+
 
 form {
     display: flex;
@@ -200,4 +258,95 @@ input[type="submit"]:hover {
 .alerta .block {
     display: block;
     margin-top: 5px;
+}
+
+/* BOTONES DE RESULTADO */
+.boton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-right: 10px;
+}
+
+/* Botón modificar */
+.boton.modificar {
+    background-color: var(--morado-principal);
+    color: var(--blanco);
+}
+
+.boton.modificar:hover {
+    background-color: var(--morado-oscuro);
+    transform: translateY(-2px);
+}
+
+/* Botón eliminar */
+.boton.eliminar {
+    background-color: #FF4D6D;
+    /* rojo */
+    color: var(--blanco);
+}
+
+.boton.eliminar:hover {
+    background-color: #e63950;
+    transform: translateY(-2px);
+}
+/* CARTA PRODUCTO */
+.card {
+    background: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background: var(--gris-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.detalles {
+    flex: 1;
+}
+
+.detalles h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: var(--morado-principal);
+}
+
+.acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icono {
+    font-size: 1.4rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icono:hover {
+    transform: scale(1.2);
+}
+
+.icono.editar {
+    color: var(--morado-principal);
+}
+
+.icono.eliminar {
+    color: #FF4D6D;
 }

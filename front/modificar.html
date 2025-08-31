@@ -20,7 +20,13 @@
         </nav>
     </header>
     <div class="container">
-        
+        <form id="form-modificar" action="#" method="PUT">
+            <h3>Modificar Producto</h3>
+            <input type="text" name="nombre" id="nombre-modificar" placeholder="Nombre del producto" />
+            <input type="number" step="1" name="cantidad" id="cantidad-modificar" placeholder="Nueva cantidad" />
+            <input type="number" step="any" name="precio" id="precio-modificar" placeholder="Nuevo precio" />
+            <input type="submit" value="Modificar producto" />
+        </form>
     </div>
 
     <footer class="footer">
@@ -41,6 +47,6 @@
             <a href="#">WhatsApp</a>
         </p>
     </footer>
-    <script src="/scripts/index.js"></script>
+    <script src="/scripts/actualizar.js"></script>
 </body>
 </html>

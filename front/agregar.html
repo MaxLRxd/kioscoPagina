@@ -20,7 +20,13 @@
         </nav>
     </header>
     <div class="container">
-        
+        <form id="form-agregar" action="#" method="POST">
+            <h3>Agregar Producto</h3>
+            <input type="text" name="nombre" id="nombre-agregar" placeholder="Nombre del producto" />
+            <input type="number" step="1" name="cantidad" id="cantidad-agregar" placeholder="Cantidad" />
+            <input type="number" step="any" name="precio" id="precio-agregar" placeholder="Precio" />
+            <input type="submit" value="Agregar producto" />
+        </form>
     </div>
 
     <footer class="footer">
@@ -36,11 +42,11 @@
             <a href="#">Política de Privacidad</a>
         </p>
         <p>Síguenos en:
-            <a href="#">Facebook</a> | 
-            <a href="#">Instagram</a> | 
+            <a href="#">Facebook</a> 
+            <a href="#">Instagram</a>
             <a href="#">WhatsApp</a>
         </p>
     </footer>
-    <script src="/scripts/index.js"></script>
+    <script src="/scripts/agregar.js"></script>
 </body>
 </html>

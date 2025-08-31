@@ -1,5 +1,7 @@
 package com.kiosco.app.Services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.kiosco.app.Models.Producto;
@@ -35,6 +37,11 @@ public class ProductoService {
         Producto producto = repositorio.findByNombre(nombre)
                             .orElseThrow(() -> new EntityNotFoundException("Producto no encontrado"));
         return new ProductoResponse(producto);
+    }
+
+    //READ ALL
+    public List<Producto> obtenerTodos() {
+        return repositorio.findAll();
     }
 
     //UPDATE
