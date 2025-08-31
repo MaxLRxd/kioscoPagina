@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Gestión de Productos</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <div class="logo"></div>
+      <h3>Kiosquitodo</h3>
+    </div>
+    <nav class="nav">
+      <ul class="menu">
+        <li class="item">inicio</li>
+        <li class="item">productos</li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Formulario: Agregar producto -->
+    <form id="form-agregar" action="#" method="POST">
+      <h3>Agregar Producto</h3>
+      <input type="text" name="nombre" id="nombre-agregar" placeholder="Nombre del producto" />
+      <input type="number" step="1" name="cantidad" id="cantidad-agregar" placeholder="Cantidad" />
+      <input type="number" step="any" name="precio" id="precio-agregar" placeholder="Precio" />
+      <input type="submit" value="Agregar producto" />
+    </form>
+
+    <!-- Formulario: Modificar producto -->
+    <form id="form-modificar" action="#" method="PUT">
+      <h3>Modificar Producto</h3>
+      <input type="text" name="nombre" id="nombre-modificar" placeholder="Nombre del producto" />
+      <input type="number" step="1" name="cantidad" id="cantidad-modificar" placeholder="Nueva cantidad" />
+      <input type="number" step="any" name="precio" id="precio-modificar" placeholder="Nuevo precio" />
+      <input type="submit" value="Modificar producto" />
+    </form>
+
+    <!-- Formulario: Eliminar producto -->
+    <form id="form-eliminar" action="#" method="DELETE">
+      <h3>Eliminar Producto</h3>
+      <input type="text" name="nombre" id="nombre-eliminar" placeholder="Nombre del producto" />
+      <input type="submit" value="Eliminar producto" />
+    </form>
+
+    <!-- Div para mostrar resultados -->
+    <div class="resultado"></div>
+  </div>
+
+  <footer class="footer">
+    <hr>
+    <p><strong>Kiosquitodo</strong> - Todos los derechos reservados © 2025</p>
+    <p>
+      Dirección: blabla, Santa Fe, Argentina<br>
+      Teléfono: 342 999-9999<br>
+      Email: kiosquitodo@gmail.com
+    </p>
+    <p>
+      <a href="#">Términos y Condiciones</a> | 
+      <a href="#">Política de Privacidad</a>
+    </p>
+    <p>Síguenos en:
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">WhatsApp</a>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
